@@ -1,0 +1,12 @@
+{
+  "prompt_sha256": "272735af8b1adab2",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "scene_id": "s06",
+    "layout": "bubble",
+    "heading": "Same number!",
+    "keywords": [],
+    "highlight": "none",
+    "accent": "green"
+  }
+}

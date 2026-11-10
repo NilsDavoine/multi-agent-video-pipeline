@@ -1,0 +1,32 @@
+{
+  "when": "2026-11-10T13:34:42+00:00",
+  "mutation": "scene s03 voice replaced by: 'Then the colour of the logo, and the font used in the footer.'",
+  "video_sha256": {
+    "original": "b26955cb19b2c47bbeb87787988594c360feb33f448e2de621b7fd27107253f0",
+    "mutated": "8d714756abfe06ce135871795011da6dddd905a33b56f83150371d59d2d9c646",
+    "restored": "b26955cb19b2c47bbeb87787988594c360feb33f448e2de621b7fd27107253f0"
+  },
+  "restored_identical": true,
+  "gate_on_mutated_video": {
+    "transcript_wer_total": {
+      "name": "transcript_wer_total",
+      "passed": false,
+      "value": 0.2031,
+      "threshold": 0.1,
+      "detail": "64 script words, 66 heard"
+    },
+    "transcript_wer_worst_scene": {
+      "name": "transcript_wer_worst_scene",
+      "passed": false,
+      "value": 1.0909,
+      "threshold": 0.25,
+      "detail": "worst scene s03; s01=0.00, s02=0.08, s03=1.09, s04=0.00, s05=0.00, s06=0.00, s07=0.00"
+    }
+  },
+  "status_on_mutated_video": "blocked",
+  "guard_test_exit_code": {
+    "mutated": 1,
+    "restored": 0
+  },
+  "guard_works": true
+}

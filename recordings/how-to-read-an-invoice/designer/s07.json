@@ -1,0 +1,14 @@
+{
+  "prompt_sha256": "b24f0457af2cc10a",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "scene_id": "s07",
+    "layout": "title",
+    "heading": "Number first. Pay once.",
+    "keywords": [
+      "Check the number"
+    ],
+    "highlight": "none",
+    "accent": "blue"
+  }
+}

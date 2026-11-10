@@ -1,0 +1,131 @@
+{
+  "provider": "replay",
+  "stale_recordings": [],
+  "events": [
+    {
+      "step": "idea",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "script",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "plan",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "design/s01",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "design/s02",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "design/s03",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "design/s04",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "design/s05",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "design/s06",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "design/s07",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "voice/s01",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "voice/s02",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "voice/s03",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "voice/s04",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "voice/s05",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "voice/s06",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "voice/s07",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "render/s01",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "render/s02",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "render/s03",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "render/s04",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "render/s05",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "render/s06",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "render/s07",
+      "status": "reused",
+      "seconds": 0.0
+    },
+    {
+      "step": "assemble",
+      "status": "ran",
+      "seconds": 0.84
+    }
+  ]
+}

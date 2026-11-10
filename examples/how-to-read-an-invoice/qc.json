@@ -1,0 +1,90 @@
+{
+  "status": "publishable",
+  "video": "/home/proprietaire/Bureau/portfolio-ia/multi-agent-video-pipeline/runs/how-to-read-an-invoice/final.mp4",
+  "checks": [
+    {
+      "name": "transcript_wer_total",
+      "passed": true,
+      "value": 0.0156,
+      "threshold": 0.1,
+      "detail": "64 script words, 64 heard"
+    },
+    {
+      "name": "transcript_wer_worst_scene",
+      "passed": true,
+      "value": 0.0833,
+      "threshold": 0.25,
+      "detail": "worst scene s02; s01=0.00, s02=0.08, s03=0.00, s04=0.00, s05=0.00, s06=0.00, s07=0.00"
+    },
+    {
+      "name": "scene_durations",
+      "passed": true,
+      "value": 0.0,
+      "threshold": 0.0,
+      "detail": "allowed 1.5-8.0 s; s01=2.62, s02=5.17, s03=4.54, s04=3.96, s05=3.71, s06=2.58, s07=3.04"
+    },
+    {
+      "name": "video_length",
+      "passed": true,
+      "value": 25.628,
+      "threshold": 30.0,
+      "detail": "planned 25.625 s"
+    },
+    {
+      "name": "audio_video_drift",
+      "passed": true,
+      "value": 0.003,
+      "threshold": 0.1,
+      "detail": "video 25.628 s, audio 25.625 s"
+    },
+    {
+      "name": "text_min_font_px",
+      "passed": true,
+      "value": 16.0,
+      "threshold": 16.0,
+      "detail": "208 text boxes; smallest 'Mia' in s01"
+    },
+    {
+      "name": "text_min_contrast",
+      "passed": true,
+      "value": 5.35,
+      "threshold": 4.5,
+      "detail": "lowest 'Mia' in s06"
+    },
+    {
+      "name": "text_fully_visible",
+      "passed": true,
+      "value": 0.0,
+      "threshold": 0.0,
+      "detail": "0 out of frame, 0 half-faded at rest, 0 covered by another element"
+    },
+    {
+      "name": "no_empty_scene",
+      "passed": true,
+      "value": 0.0,
+      "threshold": 0.0,
+      "detail": "s01: std=48.3 text=14, s02: std=59.0 text=18, s03: std=58.7 text=18, s04: std=53.1 text=18, s05: std=53.1 text=18, s06: std=55.0 text=13, s07: std=56.0 text=2"
+    },
+    {
+      "name": "no_black_frames",
+      "passed": true,
+      "value": 0.0,
+      "threshold": 0.0,
+      "detail": "ffmpeg blackdetect d=0.3 pix_th=0.10"
+    },
+    {
+      "name": "subtitle_sync",
+      "passed": true,
+      "value": 0.235,
+      "threshold": 0.3,
+      "detail": "14 cues, 0 not found in the audio"
+    },
+    {
+      "name": "facts_sourced",
+      "passed": true,
+      "value": 0.0,
+      "threshold": 0.0,
+      "detail": "4 factual lines, 1 sources"
+    }
+  ]
+}

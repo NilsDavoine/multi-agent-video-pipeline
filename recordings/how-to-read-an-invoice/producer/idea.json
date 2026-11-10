@@ -1,0 +1,16 @@
+{
+  "prompt_sha256": "5dd69bbd9aa9d81d",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "title": "Read an invoice in twenty-five seconds",
+    "lead_name": "Mia",
+    "hook": "Mia realises she paid the same invoice twice",
+    "angle": "the blocks every EU invoice must show, read in the order that catches mistakes",
+    "key_points": [
+      "the invoice number is unique and sequential",
+      "date, supplier and customer",
+      "what was sold and the price before tax",
+      "VAT rate and VAT amount"
+    ]
+  }
+}

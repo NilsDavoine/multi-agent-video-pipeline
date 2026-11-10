@@ -1,0 +1,15 @@
+{
+  "prompt_sha256": "eafd371620744258",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "scene_id": "s03",
+    "layout": "invoice",
+    "heading": "2. Date and parties",
+    "keywords": [
+      "the date",
+      "both names"
+    ],
+    "highlight": "parties",
+    "accent": "blue"
+  }
+}

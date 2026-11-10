@@ -1,0 +1,15 @@
+{
+  "prompt_sha256": "a88a0a9a83b2a6f1",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "scene_id": "s02",
+    "layout": "invoice",
+    "heading": "1. The number",
+    "keywords": [
+      "unique number",
+      "in sequence"
+    ],
+    "highlight": "number",
+    "accent": "blue"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "prompt_sha256": "2b1989aab52672c9",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "scene_id": "s05",
+    "layout": "invoice",
+    "heading": "4. The VAT",
+    "keywords": [
+      "VAT rate",
+      "VAT amount"
+    ],
+    "highlight": "vat",
+    "accent": "blue"
+  }
+}

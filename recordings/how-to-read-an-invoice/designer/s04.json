@@ -1,0 +1,15 @@
+{
+  "prompt_sha256": "f10410eb2f80148d",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "scene_id": "s04",
+    "layout": "invoice",
+    "heading": "3. What was sold",
+    "keywords": [
+      "how much",
+      "before tax"
+    ],
+    "highlight": "items",
+    "accent": "blue"
+  }
+}

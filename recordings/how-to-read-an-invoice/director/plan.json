@@ -1,0 +1,57 @@
+{
+  "prompt_sha256": "78956681294703e8",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "scenes": [
+      {
+        "id": "s01",
+        "line_indices": [
+          0
+        ],
+        "purpose": "hook: the lead's panic"
+      },
+      {
+        "id": "s02",
+        "line_indices": [
+          1
+        ],
+        "purpose": "rule one: the number"
+      },
+      {
+        "id": "s03",
+        "line_indices": [
+          2
+        ],
+        "purpose": "rule two: date and parties"
+      },
+      {
+        "id": "s04",
+        "line_indices": [
+          3
+        ],
+        "purpose": "rule three: the lines"
+      },
+      {
+        "id": "s05",
+        "line_indices": [
+          4
+        ],
+        "purpose": "rule four: the VAT"
+      },
+      {
+        "id": "s06",
+        "line_indices": [
+          5
+        ],
+        "purpose": "turn: she spots the duplicate"
+      },
+      {
+        "id": "s07",
+        "line_indices": [
+          6
+        ],
+        "purpose": "call to action"
+      }
+    ]
+  }
+}

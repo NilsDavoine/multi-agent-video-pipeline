@@ -1,0 +1,133 @@
+{
+  "fps": 24,
+  "width": 640,
+  "height": 360,
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "start": 0.0,
+      "duration": 2.625,
+      "text": "No way. I paid the same invoice twice?",
+      "cues": [
+        {
+          "text": "No way. I paid the same",
+          "start": 0.0,
+          "end": 1.42
+        },
+        {
+          "text": "invoice twice?",
+          "start": 1.42,
+          "end": 2.12
+        }
+      ]
+    },
+    {
+      "scene_id": "s02",
+      "start": 2.625,
+      "duration": 5.166666666666667,
+      "text": "Every invoice carries a unique number, in sequence. Mia never checked it.",
+      "cues": [
+        {
+          "text": "Every invoice carries a unique number,",
+          "start": 2.625,
+          "end": 5.085
+        },
+        {
+          "text": "in sequence. Mia never checked it.",
+          "start": 5.085,
+          "end": 7.225
+        }
+      ]
+    },
+    {
+      "scene_id": "s03",
+      "start": 7.7917,
+      "duration": 4.541666666666667,
+      "text": "Next, the date, then who bills whom: both names and addresses.",
+      "cues": [
+        {
+          "text": "Next, the date, then who bills",
+          "start": 7.792,
+          "end": 9.312
+        },
+        {
+          "text": "whom: both names and addresses.",
+          "start": 9.312,
+          "end": 11.532
+        }
+      ]
+    },
+    {
+      "scene_id": "s04",
+      "start": 12.3333,
+      "duration": 3.9583333333333335,
+      "text": "Then what was sold, how much, and the price before tax.",
+      "cues": [
+        {
+          "text": "Then what was sold, how much,",
+          "start": 12.333,
+          "end": 14.233
+        },
+        {
+          "text": "and the price before tax.",
+          "start": 14.233,
+          "end": 15.733
+        }
+      ]
+    },
+    {
+      "scene_id": "s05",
+      "start": 16.2917,
+      "duration": 3.7083333333333335,
+      "text": "Last, the VAT rate and the VAT amount.",
+      "cues": [
+        {
+          "text": "Last, the VAT rate and the",
+          "start": 16.292,
+          "end": 18.492
+        },
+        {
+          "text": "VAT amount.",
+          "start": 18.492,
+          "end": 19.272
+        }
+      ]
+    },
+    {
+      "scene_id": "s06",
+      "start": 20.0,
+      "duration": 2.5833333333333335,
+      "text": "Same number as last month. Caught it!",
+      "cues": [
+        {
+          "text": "Same number as last month. Caught",
+          "start": 20.0,
+          "end": 21.92
+        },
+        {
+          "text": "it!",
+          "start": 21.92,
+          "end": 22.04
+        }
+      ]
+    },
+    {
+      "scene_id": "s07",
+      "start": 22.5833,
+      "duration": 3.0416666666666665,
+      "text": "Check the number first. Then pay once.",
+      "cues": [
+        {
+          "text": "Check the number first. Then pay",
+          "start": 22.583,
+          "end": 24.483
+        },
+        {
+          "text": "once.",
+          "start": 24.483,
+          "end": 24.783
+        }
+      ]
+    }
+  ]
+}

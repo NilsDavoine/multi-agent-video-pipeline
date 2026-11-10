@@ -1,0 +1,67 @@
+{
+  "prompt_sha256": "8204d4931607ddff",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "title": "Read an invoice in twenty-five seconds",
+    "lines": [
+      {
+        "speaker": "lead",
+        "kind": "story",
+        "text": "No way. I paid the same invoice twice?",
+        "source_ids": []
+      },
+      {
+        "speaker": "narrator",
+        "kind": "fact",
+        "text": "Every invoice carries a unique number, in sequence. Mia never checked it.",
+        "source_ids": [
+          "eu-vat-226"
+        ]
+      },
+      {
+        "speaker": "narrator",
+        "kind": "fact",
+        "text": "Next, the date, then who bills whom: both names and addresses.",
+        "source_ids": [
+          "eu-vat-226"
+        ]
+      },
+      {
+        "speaker": "narrator",
+        "kind": "fact",
+        "text": "Then what was sold, how much, and the price before tax.",
+        "source_ids": [
+          "eu-vat-226"
+        ]
+      },
+      {
+        "speaker": "narrator",
+        "kind": "fact",
+        "text": "Last, the VAT rate and the VAT amount.",
+        "source_ids": [
+          "eu-vat-226"
+        ]
+      },
+      {
+        "speaker": "lead",
+        "kind": "story",
+        "text": "Same number as last month. Caught it!",
+        "source_ids": []
+      },
+      {
+        "speaker": "narrator",
+        "kind": "cta",
+        "text": "Check the number first. Then pay once.",
+        "source_ids": []
+      }
+    ],
+    "sources": [
+      {
+        "id": "eu-vat-226",
+        "title": "Council Directive 2006/112/EC (EU VAT Directive), Article 226",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006L0112",
+        "supports": "Details an invoice must show: (1) date of issue, (2) a sequential number that uniquely identifies it, (5) full names and addresses of supplier and customer, (6) quantity and nature of the goods or services, (8) taxable amount, (9) VAT rate, (10) VAT amount payable."
+      }
+    ]
+  }
+}

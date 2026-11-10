@@ -1,0 +1,12 @@
+{
+  "prompt_sha256": "30ac1e7938394c51",
+  "author": "hand-written reference answer (no API call)",
+  "output": {
+    "scene_id": "s01",
+    "layout": "bubble",
+    "heading": "Paid twice?",
+    "keywords": [],
+    "highlight": "none",
+    "accent": "red"
+  }
+}
