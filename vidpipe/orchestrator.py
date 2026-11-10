@@ -28,39 +28,15 @@ WORDS_PER_SECOND = 2.4  # budget for the writer, from the voices' measured pace
 
 
 def run(brief_path: Path, run_dir: Path | None = None, force: set[str] | None = None,
-        workers: int = 3, strict_replay: bool = False) -> tuple[QCReport, StageStore]:
+        workers: int = 3, strict_replay: bool = False, provider=None) -> tuple[QCReport, StageStore]:
     brief = Brief.model_validate_json(brief_path.read_text())
     run_dir = run_dir or config.RUNS / brief.slug
     store = StageStore(run_dir, force=_downstream(force or set()))
-    provider = get_provider(config.RECORDINGS / brief.slug, strict_replay=strict_replay)
-
-    # 1-3. Sequential roles: each one needs the previous contract.
-    idea = store.run("idea", Idea, digest(brief, provider.name),
-                     lambda: roles.producer(provider).run("idea", brief.model_dump()))
-    script = store.run("script", Script, digest(idea, provider.name), lambda: roles.writer(provider).run(
-        "script", {"idea": idea.model_dump(), "max_words": int(brief.max_seconds * WORDS_PER_SECOND * 0.85)}))
-    plan = store.run("plan", ScenePlan, digest(script, provider.name),
-                     lambda: roles.director(provider).run("plan", script.model_dump()))
-    plan.check_against(script)
+    provider = provider or get_provider(config.RECORDINGS / brief.slug, strict_replay=strict_replay)
+    idea, script, plan, designs = run_agents(brief, store, provider, workers)
 
     def scene_text(spec) -> str:
         return " ".join(script.lines[i].text for i in spec.line_indices)
-
-    # 4. One designer agent per scene, in parallel.
-    def design(spec) -> SceneDesign:
-        payload = {"scene": spec.model_dump(), "spoken_text": scene_text(spec),
-                   "speakers": [script.lines[i].speaker for i in spec.line_indices], "lead_name": idea.lead_name}
-
-        def make() -> SceneDesign:
-            d = roles.designer(provider).run(spec.id, payload)
-            if d.scene_id != spec.id:
-                raise ValueError(f"designer answered for {d.scene_id}, asked {spec.id}")
-            d.check_against(scene_text(spec))
-            return d
-        return store.run(f"design/{spec.id}", SceneDesign, digest(payload, provider.name), make)
-
-    with ThreadPoolExecutor(workers) as pool:
-        designs = list(pool.map(design, plan.scenes))
 
     # 5. Voice + word timing, per scene (local models, one load).
     def voice(spec) -> SceneAudio:
@@ -130,6 +106,39 @@ def run(brief_path: Path, run_dir: Path | None = None, force: set[str] | None = 
     (run_dir / "run.json").write_text(json.dumps(
         {"provider": provider.name, "stale_recordings": stale, "events": store.events}, indent=2))
     return report, store
+
+
+def run_agents(brief: Brief, store: StageStore, provider, workers: int = 3
+               ) -> tuple[Idea, Script, ScenePlan, list[SceneDesign]]:
+    """Steps 1-4, the agents only: idea, script, scene plan, one design per scene."""
+    # 1-3. Sequential roles: each one needs the previous contract.
+    idea = store.run("idea", Idea, digest(brief, provider.name),
+                     lambda: roles.producer(provider).run("idea", brief.model_dump()))
+    script = store.run("script", Script, digest(idea, provider.name), lambda: roles.writer(provider).run(
+        "script", {"idea": idea.model_dump(), "max_words": int(brief.max_seconds * WORDS_PER_SECOND * 0.85)}))
+    plan = store.run("plan", ScenePlan, digest(script, provider.name),
+                     lambda: roles.director(provider).run("plan", script.model_dump()))
+    plan.check_against(script)
+
+    def scene_text(spec) -> str:
+        return " ".join(script.lines[i].text for i in spec.line_indices)
+
+    # 4. One designer agent per scene, in parallel.
+    def design(spec) -> SceneDesign:
+        payload = {"scene": spec.model_dump(), "spoken_text": scene_text(spec),
+                   "speakers": [script.lines[i].speaker for i in spec.line_indices], "lead_name": idea.lead_name}
+
+        def make() -> SceneDesign:
+            d = roles.designer(provider).run(spec.id, payload)
+            if d.scene_id != spec.id:
+                raise ValueError(f"designer answered for {d.scene_id}, asked {spec.id}")
+            d.check_against(scene_text(spec))
+            return d
+        return store.run(f"design/{spec.id}", SceneDesign, digest(payload, provider.name), make)
+
+    with ThreadPoolExecutor(workers) as pool:
+        designs = list(pool.map(design, plan.scenes))
+    return idea, script, plan, designs
 
 
 def write_qc(run_dir: Path, report: QCReport, raw: dict) -> None:

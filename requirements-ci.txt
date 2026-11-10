@@ -1,0 +1,6 @@
+# What the fast unit tests need (pytest's default: -m "not example").
+# No speech models, no browser, no ffmpeg, no API key.
+pydantic==2.9.2
+numpy==2.1.3
+soundfile==0.12.1
+pytest==8.3.3

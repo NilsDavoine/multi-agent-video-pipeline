@@ -13,3 +13,4 @@ set -e
 $PY -m vidpipe export runs/how-to-read-an-invoice examples/how-to-read-an-invoice
 $PY scripts/mutation_check.py
 $PY scripts/make_results.py
+scripts/make_preview.sh

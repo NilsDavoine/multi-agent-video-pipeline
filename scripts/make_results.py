@@ -15,6 +15,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 EX = ROOT / "examples" / "how-to-read-an-invoice"
+sys.path.insert(0, str(ROOT))
+from vidpipe import live_pass  # noqa: E402
 
 
 def pytest(*args: str) -> str:
@@ -51,6 +53,8 @@ def main() -> None:
          + (" (recorded answers, no API call)" if run["provider"] == "replay" else ""),
          f"- Recordings out of date with the prompts: {len(run['stale_recordings'])}",
          f"- QC status: **{qc['status'].upper()}**", "",
+         "## Live agent pass (Claude)", "", live_pass.START, "\n\n".join(live_pass.section(live_pass.load())),
+         live_pass.END, "",
          "## Quality gates (measured on the final file)", "",
          "| Gate | Value | Threshold | Result | Detail |", "|---|---|---|---|---|"]
     for c in qc["checks"]:

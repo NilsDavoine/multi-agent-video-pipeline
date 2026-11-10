@@ -3,6 +3,7 @@
   python -m vidpipe run BRIEF.json [--force STAGE] [--strict-replay]
   python -m vidpipe qc DIR              # re-measure a finished video (run dir or example dir)
   python -m vidpipe export RUN_DIR DEST # copy a run's deliverables (video, pages, QC) to DEST
+  python -m vidpipe claude [BRIEF]      # live pass of the agents on Claude, cost estimate first
 """
 from __future__ import annotations
 
@@ -49,12 +50,19 @@ def main(argv: list[str] | None = None) -> int:
     e = sub.add_parser("export")
     e.add_argument("run_dir", type=Path)
     e.add_argument("dest", type=Path)
+    c = sub.add_parser("claude", help="live pass of the agents on Claude (needs ANTHROPIC_API_KEY)")
+    c.add_argument("brief", type=Path, nargs="?")
+    c.add_argument("--yes", action="store_true", help="skip the confirmation after the cost estimate")
+    c.add_argument("--agents-only", action="store_true", help="stop after the agents: no voice, render or QC")
     a = ap.parse_args(argv)
 
     if a.cmd == "run":
         from .orchestrator import run
         report, _ = run(a.brief, run_dir=a.run_dir, force=set(a.force), strict_replay=a.strict_replay)
         return 0 if report.passed else 2
+    if a.cmd == "claude":
+        from .live_pass import main as live
+        return live(a.brief, yes=a.yes, agents_only=a.agents_only)
     if a.cmd == "qc":
         from .orchestrator import write_qc
         from .qc.measure import run_qc
