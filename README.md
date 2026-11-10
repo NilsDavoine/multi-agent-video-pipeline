@@ -190,3 +190,7 @@ tests/              unit tests and example-video tests
   way: those still need a human, which is why publishing is manual.
 - One example, one language, 640x360. Rendering is screenshot-per-frame, which is
   simple and deterministic but slow for long or high-resolution videos.
+
+## License
+
+MIT, see [LICENSE](LICENSE). Third-party models keep their own licenses.

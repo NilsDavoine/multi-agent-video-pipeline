@@ -1,6 +1,6 @@
 {
   "status": "publishable",
-  "video": "/home/proprietaire/Bureau/portfolio-ia/multi-agent-video-pipeline/runs/how-to-read-an-invoice/final.mp4",
+  "video": "runs/how-to-read-an-invoice/final.mp4",
   "checks": [
     {
       "name": "transcript_wer_total",

@@ -11,7 +11,7 @@ from pathlib import Path
 
 from .base import extract_json, prompt_hash
 
-DEFAULT_MODEL = "claude-sonnet-4-5"
+DEFAULT_MODEL = "claude-sonnet-5-5"
 
 
 class ClaudeProvider:
