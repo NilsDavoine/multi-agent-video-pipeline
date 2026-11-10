@@ -1,5 +1,7 @@
 # multi-agent-video-pipeline
 
+[![tests](https://github.com/NilsDavoine/multi-agent-video-pipeline/actions/workflows/tests.yml/badge.svg)](https://github.com/NilsDavoine/multi-agent-video-pipeline/actions/workflows/tests.yml)
+
 A small pipeline that turns a one-paragraph brief into a short explainer video,
 using several LLM agents with typed contracts, local open-weight speech models,
 HTML scenes rendered in headless Chrome, and **measured quality gates that block
