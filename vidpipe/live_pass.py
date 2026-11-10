@@ -122,8 +122,8 @@ def section(data: dict | None) -> list[str]:
 
 def write_section(path: Path, data: dict | None) -> None:
     text = path.read_text()
-    if START not in text:
-        return
+    if START not in text:   # first time: the section is appended, with its markers
+        text = text.rstrip("\n") + f"\n\n## Live agent pass (Claude)\n\n{START}\n{END}\n"
     head, rest = text.split(START, 1)
     _, tail = rest.split(END, 1)
     path.write_text(head + START + "\n" + "\n\n".join(section(data)) + "\n" + END + tail)

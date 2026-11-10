@@ -103,6 +103,14 @@ def test_no_confirmation_sends_nothing(sandbox, monkeypatch):
     assert not p.client.messages.calls and not live_pass.PASS_JSON.exists()
 
 
+def test_a_results_file_without_markers_gets_the_section(tmp_path):
+    f = tmp_path / "results.md"
+    f.write_text("# Results\n")
+    live_pass.write_section(f, None)
+    live_pass.write_section(f, None)          # idempotent
+    assert f.read_text().count("## Live agent pass (Claude)") == 1 and "Not run yet" in f.read_text()
+
+
 def test_the_published_section_says_replay_until_the_pass_is_run():
     assert "Not run yet" in live_pass.section(None)[0]
     assert "replayed" in live_pass.section(None)[0]
